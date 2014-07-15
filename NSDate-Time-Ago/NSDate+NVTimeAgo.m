@@ -28,7 +28,7 @@
     //http://stackoverflow.com/questions/10026714/ios-converting-a-date-received-from-a-mysql-server-into-users-local-time
     //If this is not in UTC, we don't have any knowledge about
     //which tz it is. MUST BE IN UTC.
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
     [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSDate *date = [formatter dateFromString:mysqlDatetime];
@@ -104,7 +104,7 @@
 - (BOOL)isSameDayAs:(NSDate *)comparisonDate
 {
     //Check by matching the date strings
-    NSDateFormatter *dateComparisonFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateComparisonFormatter = [[[NSDateFormatter alloc] init] autorelease];
     [dateComparisonFormatter setDateFormat:@"yyyy-MM-dd"];
     
     //Return true if they are the same
@@ -215,7 +215,7 @@
 - (NSString *)formatAsYesterday
 {
     //Create date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     
     //Format
     [dateFormatter setDateFormat:@"h:mm a"];
@@ -227,7 +227,7 @@
 - (NSString *)formatAsLastWeek
 {
     //Create date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
 
     //Format
     [dateFormatter setDateFormat:@"EEEE 'at' h:mm a"];
@@ -239,7 +239,7 @@
 - (NSString *)formatAsLastMonth
 {
     //Create date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     
     //Format
     [dateFormatter setDateFormat:@"MMMM d 'at' h:mm a"];
@@ -251,7 +251,7 @@
 - (NSString *)formatAsLastYear
 {
     //Create date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     
     //Format
     [dateFormatter setDateFormat:@"MMMM d"];
@@ -263,7 +263,7 @@
 - (NSString *)formatAsOther
 {
     //Create date formatter
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
     
     //Format
     [dateFormatter setDateFormat:@"LLLL d, yyyy"];
